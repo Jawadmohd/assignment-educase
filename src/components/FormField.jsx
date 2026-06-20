@@ -20,14 +20,17 @@ const FormField = ({ label, type, placeholder, isRequired, radioOptions }) => {
     return (
       <div className="form-field">
         <label className="radio-label">
-          {label} {isRequired && <span className="required">*</span>}
+          {label}
+          {isRequired && <span className="required">*</span>}
         </label>
+
         <div className="radio-field">
           {radioOptions?.map((option) => (
-            <span className="radio-element">
-              <input type="radio" />
-              <label>{option}</label>
-            </span>
+            <label className="radio-element" key={option}>
+              <input className="radio" type="radio" name={label} />
+
+              <span>{option}</span>
+            </label>
           ))}
         </div>
       </div>

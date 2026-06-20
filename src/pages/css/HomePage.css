@@ -1,0 +1,46 @@
+.home-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.home-content {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 15px;
+}
+
+#signup-btn {
+  width: 100%;
+  padding: 10px;
+  font-size: large;
+  font-weight: 700;
+  background-color: #6c25ff;
+  color: white;
+  border-radius: 7px;
+  outline: none;
+  cursor: pointer;
+}
+
+#login-btn {
+  width: 100%;
+  padding: 10px;
+  font-size: large;
+  font-weight: 700;
+  background-color: #7532fc52;
+  color: black;
+  border-radius: 7px;
+  outline: none;
+  cursor: pointer;
+}
+
+#signup-btn,
+#login-btn {
+  cursor: pointer;
+  outline: none;
+}

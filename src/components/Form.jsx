@@ -16,7 +16,9 @@ export const Form = ({ inputs, formBtnTxt }) => {
         />
       ))}
 
-      <button type="submit">{formBtnTxt}</button>
+      <button id="form-btn" type="submit">
+        {formBtnTxt}
+      </button>
     </form>
   );
 };
