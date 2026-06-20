@@ -43,4 +43,5 @@
 #login-btn {
   cursor: pointer;
   outline: none;
+  border: none;
 }

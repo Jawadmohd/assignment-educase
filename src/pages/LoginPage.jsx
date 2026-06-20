@@ -2,36 +2,9 @@ import React from "react";
 import AuthLayout from "../components/AuthLayout";
 import { Form } from "../components/Form";
 import "./css/LoginPage.css";
+import { LoginInputs } from "../Cnstants";
 
 const LoginPage = () => {
-  const LoginInputs = [
-    {
-      name: "email",
-      label: "Email Address",
-      type: "text",
-      placeholder: "Enter email address",
-      isRequired: true,
-      validations: {
-        required: "Email is required",
-
-        pattern: {
-          value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-          message: "Enter a valid email",
-        },
-      },
-    },
-    {
-      name: "password",
-      label: "Password",
-      type: "password",
-      placeholder: "Enter password",
-      isRequired: true,
-      validations: {
-        required: "Password is required",
-      },
-    },
-  ];
-
   const btnText = "Login";
 
   return (

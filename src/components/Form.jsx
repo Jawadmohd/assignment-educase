@@ -10,7 +10,7 @@ import { useParams } from "react-router-dom";
 export const Form = ({ inputs, formBtnTxt, toastMessage }) => {
   const {} = useParams();
   const navigate = useNavigate();
-  const { login } = useUser();
+  const { login, user } = useUser();
   const {
     register,
     handleSubmit,

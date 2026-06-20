@@ -3,12 +3,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgba(240, 248, 255, 0.588);
 }
 
 .main {
-  border: 2px solid black;
   min-height: 90vh;
   width: 27%;
   display: flex;
   padding: 20px;
+  border: 1px solid grey;
+  border-radius: 10px;
+  background-color: white;
 }

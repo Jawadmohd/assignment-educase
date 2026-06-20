@@ -5,19 +5,24 @@ import UserPhoto from "../../public/user.png";
 import { MdOutlineCameraAlt } from "react-icons/md";
 import { MdOutlineLogout } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import { useUser } from "../context/UserContext.jsx";
+import toast from "react-hot-toast";
 
 const SettingsPage = () => {
+  const { user, logout } = useUser();
   const navigate = useNavigate();
   const userDetails = {
     photo: UserPhoto,
-    name: "Jhon Doe",
-    email: "jhondoe@gmail.com",
+    name: user?.fullName || "Jhon Doe",
+    email: user?.email || "jhondoe@gmail.com",
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui quaerat tenetur vitae non repellendus commodi  impedit iste culpa.",
   };
 
   const onLogout = () => {
+    logout();
     navigate("/login");
+    toast.success("Logout successful");
   };
 
   return (
