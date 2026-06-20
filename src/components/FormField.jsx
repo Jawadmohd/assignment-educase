@@ -1,7 +1,17 @@
 import React from "react";
 import "./css/FormField.css";
 
-const FormField = ({ label, type, placeholder, isRequired, radioOptions }) => {
+const FormField = ({
+  name,
+  label,
+  type,
+  placeholder,
+  isRequired,
+  radioOptions,
+  register,
+  validations,
+  errors,
+}) => {
   if (type === "text" || type === "password") {
     return (
       <div className="form-field">
@@ -13,7 +23,10 @@ const FormField = ({ label, type, placeholder, isRequired, radioOptions }) => {
           type={type}
           placeholder={placeholder}
           required
+          {...register(name, validations)}
         />
+
+        {errors[name] && <p style={{ color: "red" }}>{errors[name].message}</p>}
       </div>
     );
   } else if (type === "radio") {
@@ -27,11 +40,20 @@ const FormField = ({ label, type, placeholder, isRequired, radioOptions }) => {
         <div className="radio-field">
           {radioOptions?.map((option) => (
             <label className="radio-element" key={option}>
-              <input className="radio" type="radio" name={label} />
+              <input
+                className="radio"
+                type="radio"
+                name={label}
+                value={option}
+                {...register(name, validations)}
+              />
 
               <span>{option}</span>
             </label>
           ))}
+          {errors[name] && (
+            <p style={{ color: "red" }}>{errors[name].message}</p>
+          )}
         </div>
       </div>
     );

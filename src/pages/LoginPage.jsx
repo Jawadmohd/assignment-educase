@@ -6,16 +6,29 @@ import "./css/LoginPage.css";
 const LoginPage = () => {
   const LoginInputs = [
     {
+      name: "email",
       label: "Email Address",
       type: "text",
       placeholder: "Enter email address",
       isRequired: true,
+      validations: {
+        required: "Email is required",
+
+        pattern: {
+          value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+          message: "Enter a valid email",
+        },
+      },
     },
     {
+      name: "password",
       label: "Password",
       type: "password",
       placeholder: "Enter password",
       isRequired: true,
+      validations: {
+        required: "Password is required",
+      },
     },
   ];
 
@@ -26,7 +39,11 @@ const LoginPage = () => {
       <h4 className="login-subheading">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit cum
       </h4>
-      <Form inputs={LoginInputs} formBtnTxt={btnText} />
+      <Form
+        inputs={LoginInputs}
+        formBtnTxt={btnText}
+        toastMessage={"Login successful"}
+      />
     </AuthLayout>
   );
 };
