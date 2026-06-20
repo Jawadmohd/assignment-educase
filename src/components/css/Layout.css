@@ -8,10 +8,22 @@
 
 .main {
   min-height: 90vh;
-  width: 27%;
+  width: 80vw;
   display: flex;
   padding: 20px;
   border: 1px solid grey;
   border-radius: 10px;
   background-color: white;
+}
+
+@media (min-width: 768px) {
+  .main {
+    width: 40vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main {
+    width: 25vw;
+  }
 }
