@@ -1,0 +1,14 @@
+.main-container {
+  min-height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  border: 2px solid black;
+  min-height: 90vh;
+  width: 27%;
+  display: flex;
+  padding: 20px;
+}
